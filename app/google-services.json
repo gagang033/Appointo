@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "673969047687",
+    "firebase_url": "https://appointo-a3832.firebaseio.com",
+    "project_id": "appointo-a3832",
+    "storage_bucket": "appointo-a3832.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673969047687:android:615e94712638ae123ad022",
+        "android_client_info": {
+          "package_name": "com.lenovo.example.appointo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673969047687-2dk52dg8n5k6s0jdqs4cdldl49hd98pp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lenovo.example.appointo",
+            "certificate_hash": "d6a9ba0c5ee66d8996f3f0bd063fc370fe68a79e"
+          }
+        },
+        {
+          "client_id": "673969047687-j8c3ifsvi6r5mn3e4t4ptclqjch26qak.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkry75neb_ZxBcJQfcldbWnB_yhCvLFa4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673969047687-j8c3ifsvi6r5mn3e4t4ptclqjch26qak.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
