@@ -32,6 +32,7 @@ public class VerifyEmailActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     String userName,userEmail,userPassword;
     String userEmailPassed;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +71,7 @@ public class VerifyEmailActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    FirebaseUser user = mAuth.getCurrentUser();
+                    user = mAuth.getCurrentUser();
                     //updateUI(user);
                     if(user.isEmailVerified()){
                         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -183,5 +184,20 @@ public class VerifyEmailActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mAuth.signOut();
+        user.delete();
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mAuth.signOut();
+        user.delete();
     }
 }

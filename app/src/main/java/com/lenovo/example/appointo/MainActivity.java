@@ -3,6 +3,7 @@ package com.lenovo.example.appointo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telecom.Call;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     Button registerButton;
     private FirebaseAuth mAuth;
     String userName,userEmail,userPassword,confirmPassword;
+    ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
+
+        pd = new ProgressDialog(this);
+        pd.setTitle("Checking user");
+        pd.setCancelable(false);
+        pd.show();
 
         userNameText = findViewById(R.id.user_name);
         userEmailText = findViewById(R.id.user_email);
@@ -91,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this,AdminHome.class));
                     else
                         startActivity(new Intent(MainActivity.this,UserHome.class));
+                    pd.dismiss();
                 }
 
                 @Override
@@ -101,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
 //            Intent intent = new Intent(MainActivity.this,HomeActivity.class);
 //            startActivity(intent);
         }
+        else
+            pd.dismiss();
     }
 
     void SignUp(final String userName, final String userEmail, final String userPassword){

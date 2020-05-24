@@ -12,10 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VerifyEmailActivity"></activity>
-        <activity android:name=".UserHome" />
-        <activity android:name=".AdminHome" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".AdminAddSlots"
+            android:label="Add Slots"
+            android:parentActivityName=".AdminSelectDate"></activity>
+        <activity android:name=".AdminSelectDate"
+            android:label="Select date"
+            android:parentActivityName=".AdminHome"/>
+        <activity
+            android:name=".VerifyEmailActivity"
+            android:label="Login" />
+        <activity
+            android:name=".UserHome"
+            android:label="Home" />
+        <activity
+            android:name=".AdminHome"
+            android:label="Slots" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -3,6 +3,7 @@ package com.lenovo.example.appointo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -32,11 +33,17 @@ public class LoginActivity extends AppCompatActivity {
     TextView forgotPasswordText;
     Button signInButton;
     private FirebaseAuth mAuth;
+    ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        pd = new ProgressDialog(this);
+        pd.setTitle("Logging in...");
+        pd.setCancelable(false);
+        pd.show();
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -122,7 +129,7 @@ public class LoginActivity extends AppCompatActivity {
                             // ...
                         }
 
-                        // ...
+                        pd.dismiss();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -136,6 +143,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Wrong Password",
                             Toast.LENGTH_SHORT).show();
                 }
+                pd.dismiss();
             }
         });
     }
