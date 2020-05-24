@@ -14,6 +14,10 @@ Note:- To view the admin side app, login with the following credentials:
   
   Password - gagang
   
+Please find the apk file named as appointo.apk
+  
+To test the app, you can download the appointo.apk file 
+  
 
 Features i could make in the time alloted:
 
